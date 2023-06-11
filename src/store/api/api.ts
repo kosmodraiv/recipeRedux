@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IRecipe } from '../../types/recipe.types';
 
-const API_URL = 'http://localhost:3000/recipes'
+const API_URL = 'https://64853af5a795d24810b6c7e8.mockapi.io/recipe/recipe'
 
 export const api = createApi({
     reducerPath: 'api',
