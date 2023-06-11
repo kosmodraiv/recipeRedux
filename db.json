@@ -1,0 +1,32 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Apple Frangipan Tart",
+      "recipe": "1 package of puff pastry 3 large apples, thinly sliced 100g ground almonds 100g sugar 100g butter 2 eggs",
+      "order": "Start by preheating the oven to 180°C (350°F). Roll out a sheet of puff pastry and place it in a tart pan. In a bowl, mix together ground almonds, sugar, melted butter, and beaten eggs. Spread the almond mixture evenly over the puff pastry. Arrange thinly sliced apples on top. Bake in the preheated oven for about 30 minutes until the crust is golden and the filling is set.",
+      "image": "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Apple & Blackberry Crumble",
+      "recipe": "Sliced apples, fresh blackberries, flour, butter, brown sugar, oats",
+      "order": "Combine sliced apples and fresh blackberries in a baking dish. In a separate bowl, mix flour, butter, brown sugar, and oats to make a crumble topping. Sprinkle the crumble mixture over the fruit. Bake in the oven until the topping is golden and the fruit is bubbly",
+      "image": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Apam balik",
+      "recipe": "Flour, eggs, sugar, coconut milk, crushed peanuts, sweet corn",
+      "order": "Prepare a batter using flour, eggs, sugar, and coconut milk. Heat a non-stick pan and pour a ladleful of batter. Cook until the edges are crispy and the center is slightly soft. Flip the pancake and cook for a few more seconds. Fold the pancake and serve with your favorite filling, such as crushed peanuts and sweet corn",
+      "image": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Ayam Perick",
+      "order": "Marinate chicken pieces with a blend of spices including turmeric, chili powder, garlic, and ginger. Grill or pan-fry the chicken until it's cooked through and slightly charred. Serve hot with a side of steamed rice and a tangy dipping sauce.",
+      "recipe": "Chicken pieces, turmeric, chili powder, garlic, ginger, steamed rice, tangy ",
+      "image": "https://www.themealdb.com/images/media/meals/020z181619788503.jpg"
+    }
+  ]
+}

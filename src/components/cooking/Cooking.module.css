@@ -1,0 +1,21 @@
+.cooking > ul {
+  list-style-type: none;
+}
+
+.cooking > p{
+    margin-bottom: 1%;
+    font-size: 18px;
+    color: darkkhaki
+}
+
+.cooking > ul > li{
+    font-size: 26px;
+    color: aquamarine;
+}
+
+.cooking{
+  margin: 20px;
+  border: 1px solid white;
+  max-width: 100%;
+  padding: 15px;
+}
