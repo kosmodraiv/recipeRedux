@@ -13,7 +13,7 @@ interface CookingItem {
 const RecipeDetails: React.FC = () => {
   const cooking = useSelector(
     (state: RootState) => state.cooking
-  ) as CookingItem[];
+  );
   const [checkedItems, setCheckedItems] = useState<boolean[]>([]);
 
   const handleCheckboxChange = (itemIndex: number): void => {
@@ -52,31 +52,36 @@ const RecipeDetails: React.FC = () => {
 
   return (
     <div>
-      {cooking.map((item: CookingItem, index: number) => (
-        <div className={styles.cooking} key={item.id}>
-          <p>Name: {item.name}</p>
-          <ul>
-            {item.recipe
-              .split(",")
-              .map((ingredient: string, ingredientIndex: number) => {
-                const itemIndex = index * item.recipe.length + ingredientIndex;
-                return (
-                  <li key={ingredientIndex}>
-                    {ingredient.trim()}
-                    <input
-                      type="checkbox"
-                      checked={checkedItems[itemIndex] || false}
-                      onChange={() => handleCheckboxChange(itemIndex)}
-                    />
-                  </li>
-                );
-              })}
-          </ul>
-          <button onClick={() => handleResetCooking(index)}>
-            Reset cooking
-          </button>
-        </div>
-      ))}
+      {Array.isArray(cooking) ? (
+        cooking.map((item: CookingItem, index: number) => (
+          <div className={styles.cooking} key={item.id}>
+            <p>Name: {item.name}</p>
+            <ul>
+              {item.recipe
+                .split(",")
+                .map((ingredient: string, ingredientIndex: number) => {
+                  const itemIndex =
+                    index * item.recipe.length + ingredientIndex;
+                  return (
+                    <li key={ingredientIndex}>
+                      {ingredient.trim()}
+                      <input
+                        type="checkbox"
+                        checked={checkedItems[itemIndex] || false}
+                        onChange={() => handleCheckboxChange(itemIndex)}
+                      />
+                    </li>
+                  );
+                })}
+            </ul>
+            <button onClick={() => handleResetCooking(index)}>
+              Reset cooking
+            </button>
+          </div>
+        ))
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };
