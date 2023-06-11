@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RootState } from "../../store/store";
 import { useSelector, useDispatch } from "react-redux";
 import { actions } from "../../store/cooking/cooking.slice";
-import styles from './Cooking.module.css';
+import styles from "./Cooking.module.css";
 
 interface CookingItem {
   id: number;
@@ -11,7 +11,9 @@ interface CookingItem {
 }
 
 const RecipeDetails: React.FC = () => {
-  const cooking = useSelector((state: RootState) => state.cooking) as CookingItem[];
+  const cooking = useSelector(
+    (state: RootState) => state.cooking
+  );
   const [checkedItems, setCheckedItems] = useState<boolean[]>([]);
 
   const handleCheckboxChange = (itemIndex: number): void => {
@@ -49,29 +51,38 @@ const RecipeDetails: React.FC = () => {
   }, []);
 
   return (
-    <>
-      {cooking.map((item: CookingItem, index: number) => (
-        <div className={styles.cooking} key={item.id}>
-          <p>Name: {item.name}</p>
-          <ul>
-            {item.recipe.split(",").map((ingredient: string, ingredientIndex: number) => {
-              const itemIndex = index * item.recipe.length + ingredientIndex;
-              return (
-                <li key={ingredientIndex}>
-                  {ingredient.trim()}
-                  <input
-                    type="checkbox"
-                    checked={checkedItems[itemIndex] || false}
-                    onChange={() => handleCheckboxChange(itemIndex)}
-                  />
-                </li>
-              );
-            })}
-          </ul>
-          <button onClick={() => handleResetCooking(index)}>Reset cooking</button>
-        </div>
-      ))}
-    </>
+    <div>
+      {Array.isArray(cooking) ? (
+        cooking.map((item: CookingItem, index: number) => (
+          <div className={styles.cooking} key={item.id}>
+            <p>Name: {item.name}</p>
+            <ul>
+              {item.recipe
+                .split(",")
+                .map((ingredient: string, ingredientIndex: number) => {
+                  const itemIndex =
+                    index * item.recipe.length + ingredientIndex;
+                  return (
+                    <li key={ingredientIndex}>
+                      {ingredient.trim()}
+                      <input
+                        type="checkbox"
+                        checked={checkedItems[itemIndex] || false}
+                        onChange={() => handleCheckboxChange(itemIndex)}
+                      />
+                    </li>
+                  );
+                })}
+            </ul>
+            <button onClick={() => handleResetCooking(index)}>
+              Reset cooking
+            </button>
+          </div>
+        ))
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
   );
 };
 

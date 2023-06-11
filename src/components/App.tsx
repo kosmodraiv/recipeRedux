@@ -14,11 +14,11 @@ function App() {
         <Header />
         
         <Routes>
-          <Route path="/auth" element={<Authentication />} />
-          <Route path="/favor" element={<Favorites />}/>
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/create" element={<CreateRecipe />} />
-          <Route path="/cooking" element={<RecipeDetails />} />
+          <Route path="recipeRedux/auth" element={<Authentication />} />
+          <Route path="recipeRedux/favor" element={<Favorites />}/>
+          <Route path="recipeRedux/recipes" element={<Recipes />} />
+          <Route path="recipeRedux/create" element={<CreateRecipe />} />
+          <Route path="recipeRedux/cooking" element={<RecipeDetails />} />
         </Routes>
         
     </Router>

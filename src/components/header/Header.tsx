@@ -8,11 +8,11 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.list}>
-        <Link to="/recipes">Recipes</Link>
-        <Link to="/create">Create Recipe</Link>
-        <Link to="/favor">Favorite</Link>
-        <Link to="/cooking">Cooking</Link>
-        <Link to="/auth">Profile</Link>
+        <Link to="/recipeRedux/recipes">Recipes</Link>
+        <Link to="/recipeRedux/create">Create Recipe</Link>
+        <Link to="/recipeRedux/favor">Favorite</Link>
+        <Link to="/recipeRedux/cooking">Cooking</Link>
+        <Link to="/recipeRedux/auth">Profile</Link>
       </div>
     </div>
   );
